@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dytauo73xw1on"]
+[gd_scene load_steps=3 format=3 uid="uid://dytauo73xw1on"]
 
 [ext_resource type="PackedScene" uid="uid://5hn6xyxku0km" path="res://player_k.tscn" id="1_aq7ej"]
+[ext_resource type="PackedScene" uid="uid://duq1j5fmopgbm" path="res://basic_collectable.tscn" id="2_2cln7"]
 
 [node name="Free_World" type="Node2D"]
 
 [node name="PlayerK" parent="." instance=ExtResource("1_aq7ej")]
 position = Vector2(283, 155)
+
+[node name="Basic_Collectable" parent="." instance=ExtResource("2_2cln7")]
+position = Vector2(417, 184)

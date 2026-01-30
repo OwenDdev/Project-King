@@ -4,15 +4,17 @@ var speed = 100
 
 var input_velocity = Vector2.ZERO
 
+var Inventory = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_pressed("Interact") :
+		print(Inventory)
 
 func _physics_process(delta: float) -> void:
 	

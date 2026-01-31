@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dllkxfgrehl3c"]
+
+[ext_resource type="Texture2D" uid="uid://crgyuaa3akawm" path="res://Room.png" id="1_7asxc"]
+[ext_resource type="Script" path="res://base_scene.gd" id="1_n7prw"]
+[ext_resource type="PackedScene" uid="uid://del724g2kphlu" path="res://scene_trigger.tscn" id="3_dv0j8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwyuw"]
+size = Vector2(627, 115.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slt7f"]
+size = Vector2(236, 135)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4dy0"]
+
+[node name="InsideHouse" type="Node2D"]
+z_index = -1
+script = ExtResource("1_n7prw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.89, 0.88199, 0.6497, 1)
+position = Vector2(324, 179)
+texture = ExtResource("1_7asxc")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(323.5, 61.125)
+shape = SubResource("RectangleShape2D_bwyuw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(326, 316)
+shape = SubResource("RectangleShape2D_bwyuw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(125, 188.5)
+shape = SubResource("RectangleShape2D_slt7f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(524, 189)
+shape = SubResource("RectangleShape2D_slt7f")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(330, 240)
+
+[node name="SceneTrigger" parent="." instance=ExtResource("3_dv0j8")]
+position = Vector2(329, 257)
+connected_scene = "free_world"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+shape = SubResource("RectangleShape2D_f4dy0")

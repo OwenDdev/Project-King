@@ -1,12 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://dytauo73xw1on"]
+[gd_scene load_steps=7 format=3 uid="uid://dytauo73xw1on"]
 
 [ext_resource type="PackedScene" uid="uid://5hn6xyxku0km" path="res://player_k.tscn" id="1_aq7ej"]
+[ext_resource type="Script" path="res://free_world.gd" id="1_c5wvl"]
 [ext_resource type="PackedScene" uid="uid://duq1j5fmopgbm" path="res://basic_collectable.tscn" id="2_2cln7"]
+[ext_resource type="PackedScene" uid="uid://dn0yd4fk1lunw" path="res://home.tscn" id="3_43e15"]
+[ext_resource type="PackedScene" uid="uid://del724g2kphlu" path="res://scene_trigger.tscn" id="4_3kur2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwrla"]
+size = Vector2(24, 22)
 
 [node name="Free_World" type="Node2D"]
+script = ExtResource("1_c5wvl")
 
 [node name="PlayerK" parent="." instance=ExtResource("1_aq7ej")]
 position = Vector2(283, 155)
 
 [node name="Basic_Collectable" parent="." instance=ExtResource("2_2cln7")]
 position = Vector2(417, 184)
+
+[node name="Home" parent="." instance=ExtResource("3_43e15")]
+position = Vector2(138, 54)
+
+[node name="SceneTrigger" parent="." instance=ExtResource("4_3kur2")]
+position = Vector2(138, 119)
+connected_scene = "inside_house"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+shape = SubResource("RectangleShape2D_nwrla")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(138, 142)

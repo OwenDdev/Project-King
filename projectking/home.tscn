@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn0yd4fk1lunw"]
+
+[ext_resource type="Texture2D" uid="uid://2ah7cqar7fp8" path="res://RoomEx.png" id="1_2x87i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuv5b"]
+size = Vector2(161, 92)
+
+[node name="Home" type="StaticBody2D"]
+z_index = -2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2x87i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 7)
+shape = SubResource("RectangleShape2D_tuv5b")

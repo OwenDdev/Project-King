@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dytauo73xw1on"]
+[gd_scene load_steps=8 format=3 uid="uid://dytauo73xw1on"]
 
 [ext_resource type="PackedScene" uid="uid://5hn6xyxku0km" path="res://player_k.tscn" id="1_aq7ej"]
 [ext_resource type="Script" path="res://free_world.gd" id="1_c5wvl"]
 [ext_resource type="PackedScene" uid="uid://duq1j5fmopgbm" path="res://basic_collectable.tscn" id="2_2cln7"]
 [ext_resource type="PackedScene" uid="uid://dn0yd4fk1lunw" path="res://home.tscn" id="3_43e15"]
 [ext_resource type="PackedScene" uid="uid://del724g2kphlu" path="res://scene_trigger.tscn" id="4_3kur2"]
+[ext_resource type="PackedScene" uid="uid://5hy0poeu1w4b" path="res://enemy.tscn" id="6_ouegg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwrla"]
 size = Vector2(24, 22)
@@ -32,3 +33,9 @@ shape = SubResource("RectangleShape2D_nwrla")
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(138, 142)
+
+[node name="Enemy" parent="." instance=ExtResource("6_ouegg")]
+position = Vector2(153, 261)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_ouegg")]
+position = Vector2(230, 261)
